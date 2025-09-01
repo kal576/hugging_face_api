@@ -11,9 +11,9 @@ app = Flask(__name__)
 #sql connection
 db = mysql.connector.connect(
             host="localhost",
-            user="password",
+            user=os.getenv("DB_USERNAME"),
             password=os.getenv("DB_PASSWORD"),
-            database="hugging_face_db"
+            database="your_database_name"
             )
 
 cursor = db.cursor()
